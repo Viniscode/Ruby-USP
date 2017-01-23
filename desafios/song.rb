@@ -1,12 +1,3 @@
-
-module Comparable
-  def < (other)
-    self <=> other == -1
-  end
-  end
-
-end
-
 class Song
   attr_accessor :name, :duration
   def initialize(name, duration)
