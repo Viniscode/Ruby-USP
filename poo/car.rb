@@ -7,17 +7,21 @@ class Car
   end
 
   def add_component(value)
-    extras
+    extras(value)
     if self.acessorios_extras.include?value.to_sym
     @components << value
-    @price += self.componentes[value.to_sym]
+    @price *= self.acessorios_extras[value.to_sym]
     else
     puts "Não temos este component"
     end
   end
 
-  def extras
-    extend Acessorios
+  def componentes
+    @components
+  end
+private
+  def extras(value)
+    self.extend Acessorios
   end
 end
 
